@@ -2,7 +2,7 @@
 
 resource "aws_eks_node_group" "private-nodes" {
   cluster_name    = aws_eks_cluster.demo.name
-  node_group_name = "private-nodes"
+  node_group_name = var.node_private_name
   node_role_arn   = data.terraform_remote_state.network.outputs.node_role
   
 
@@ -38,7 +38,7 @@ resource "aws_eks_node_group" "private-nodes" {
 
 resource "aws_eks_node_group" "public-nodes" {
   cluster_name    = aws_eks_cluster.demo.name
-  node_group_name = "public-nodes"
+  node_group_name = var.node_public_name
   node_role_arn   = data.terraform_remote_state.network.outputs.node_role
   
 

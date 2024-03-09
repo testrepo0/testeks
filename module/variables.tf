@@ -1,8 +1,8 @@
-variable "vpc_subnet" {
+/*variable "vpc_subnet" {
     type = list(string)
     default = [ "subprivate1","subprivate2","subpublic1","subpublic2" ]
   
-}
+} */
 
 variable "region" {
     type = string
@@ -10,13 +10,24 @@ variable "region" {
   
 }
 
-variable "node_name" {
+variable "node_private_name" {
     type = string
-    default = "private_node"
+
   
 }
 
+variable "node_public_name" {
+    type = string
+
+  
+}
 variable "ekscluster_name" {
-    type = string   
+    type = string
+      
 
 }
+
+/*variable "data_state_name" {
+    type = string
+    default = "network"
+} */
